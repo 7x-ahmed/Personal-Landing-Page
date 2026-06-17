@@ -1,263 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>AboutMe</title>
+</head>
+<body>
+  
+    <header>
+        <img src="assets/svg/2-removebg-preview.png" alt="7X Ahmed" id="logoo"/>
+        <nav class="navigation">
+            <ul>
+                <li> <a href="#aboutMe"> about me </a></li>
+                <li> <a href="#myWorks"> my works</a></li>
+                <li> <a href="#contactMe"> contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr/>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: "poppins", serif;
-}
+    <section class="hero">
+        <img class="arrow" src="assets/svg/arrow.svg" alt="arrow"/>
+        <div class="heroAhmed">
+            <h1 class="name">I'm ahmed </h1>
+            <h1 class="title">freelancer </h1>
+        
+            <div class="heroBtns">
+                <a href="#contactMe" class="hireMe"> Hire me</a>
+                <a class="cv" href="" download>
+                     Download CV
+                    <img src="assets/svg/download.svg" alt="download button"/> 
+                </a>
+            </div>
+        </div>
+        <img src="assets/svg/Hero.svg" alt=" hero img " class="heroImg">
+    </section>
 
-body {
-    background-color: #222831;
-}
+    <section class="aboutMe" id="aboutMe"> 
+        <img src="assets/svg/AboutMe.svg" alt="aboutMe image" class="aboutMeImg">
+        <div class="textContainer">
+            <div class="textTitle">
+                <h1 class="aboutName"> about</h1>
+                <h1 class="aboutTitle"> me</h1>
+                <img src="assets/svg/lightbulb.svg" alt="light">
+            </div>
+            <p class="aboutMePar"> hay, I'm ahmed a freelancer who loves turning complex ideas into simple,
+                 sleek solutions currently diving into mobile app development to level up my skills.
+                  I enjoy building cool stuff, experimenting with new tech, and making things look and feel great
+            </p>
+        </div>
+    </section>
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem auto;
-    max-width: 1200px;
-}
+    <section class="works" id="myWorks">
+        <div class="worksContainer">
+            <div class="projectTitle">
+                <h1 class="aboutName"> my recent</h1>
+                <h1 class="aboutTitle">works</h1>
+            </div>
+            <ul>
+                <li>
+                    <a href="#" target="_blank"><img src="assets/svg/Capture d'écran 2026-06-17 211306.png" alt="landingPage"> </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank"> <img src="assets/imgs/webApp.png" alt="wepApp"></a>
+                </li>
+                <li>
+                    <a href="#" target="_blank"> <img src="assets/imgs/app.png" alt="app"></a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-.navigation ul {
-    display: flex;
-    list-style-type: none;  
-    gap: 2rem;
-}
+    <section class="contactContainer" id="contactMe">
+        <div class="contactTitle">
+            <h1 class="aboutName">contact</h1>
+            <h1 class="aboutTitle"> me</h1>
+        </div>
+        <div class="contact">
+            <div class="emailAndPhone">
+                <img src="assets/svg/Email.svg" alt="email logo">
+                <a href="mailto:ahmedmahdi1133@gmail.com"><h3>ahmedmahdi1133@gmail.com</h3></a>
+            </div>
+            <div class="emailAndPhone">
+                <img src="assets/svg/phone.svg" alt="phone logo">
+                <h3>+21623390056</h3>
+            </div>
+        </div>
 
-.navigation a {
-    text-decoration: none;
-    color: #eeeeee;
-}
+        <div class="socialMedia">
+            <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">
+                <img src="assets/svg/github.svg" alt="my github profile">
+            </a>
+            <a href="https://app.netlify.com" target="_blank">
+                <img src="assets/svg/netfly.svg" alt="netlify">
+            </a> 
+        </div>
+    </section>
 
-.navigation a:hover {
-    color: #00adb5;
-}
+    <footer class="mainFooter">
+        <p>Developed by  <span class="footerName">7X Ahmed</span></p>
+    </footer>
 
-hr {
-    opacity: 10%;
-}
-
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5rem auto;
-    max-width: 1200px;
-}
-
-.arrow {
-    position: absolute;
-    transform: translateX(-1.6rem) translateY(1.5rem);
-}
-
-.heroAhmed {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    transform: translateX(3.4rem);
-}
-
-.name {
-    font-size: 3rem;
-    color: #eeeeee;
-}
-
-.title {
-    font-size: 4rem;
-    color: #00adb5;
-}
-
-.heroBtns {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.hireMe {
-    background-color: #00adb5;
-    color: #eeeeee;
-    border-radius: 24px;
-    text-decoration: none;
-    padding: 0.5rem 1.5rem;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-}
-
-.cv {
-    background-color: rgba(57, 62, 70, 0.75);
-    color: #eeeeee;
-    border-radius: 24px;
-    text-decoration: none;
-    padding: 0.5rem 1.5rem;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    backdrop-filter: blur(4px);
-}
-
-.heroImg {
-    display: flex;
-    gap: 0.5rem;
-    transform: translateX(4rem);
-}
-
-.aboutMe {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10rem auto;
-    max-width: 1200px;
-    gap: 10rem;
-}
-
-.textContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-.textTitle {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 2rem;
-}
-
-.aboutName {
-    color: #eeeeee;
-}
-
-.aboutTitle {
-    color: #00adb5;
-}
-
-.aboutMePar {
-    text-align: justify;
-    color: rgba(238, 238, 238, 0.75);
-}
-
-.works {
-    background-image: url("assets/svg/background.svg");
-    padding: 10rem 10rem;
-    margin: 5rem 0rem;
-}
-
-.worksContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin: 5rem auto;
-    max-width: 1200px;
-}
-
-.projectTitle {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
-    font-size: 2rem;
-}
-
-.works ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    list-style-type: none;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.works li {
-    border-radius: 16px;
-    background-color: rgba(57, 62, 70, 0.5);
-    backdrop-filter: blur(4px);
-    padding: 1rem 4rem;
-    overflow: hidden; /* يمنع خروج الصورة بشكل مشوه عند الـ hover */
-    transition: background-color 0.3s;
-}
-
-.works li img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-/* حل مشكلة الـ hover التي ذكرتها في تعليقك البرمجي */
-.works li:hover img {
-    transform: scale(1.15); /* تكبير لطيف ومتناسق دون تخريب التصميم */
-}
-
-.contactContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap: 2rem;
-    margin: 2rem auto;
-    max-width: 1200px;
-}
-
-.contactTitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    margin-bottom: 10px;
-    font-size: 2rem;
-}
-
-.contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10rem; /* تقليل الفراغ الضخم لجعلها متناسقة */
-}
-
-.contact h3, .contact a {
-    color: #eeeeee;
-    text-decoration: none;
-}
-
-.emailAndPhone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.socialMedia {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-}
-
-.socialMedia a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: rgba(57, 62, 70, 0.5);
-    backdrop-filter: blur(6px);
-    padding: 1rem;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.socialMedia a:hover {
-    background-color: #00adb5;
-    transform: translateY(-5px);
-}
-
-.socialMedia img {
-    width: 35px;
-    height: 35px;
-}
-#logoo{
-    width: 100px;
-    height: 100px;
-
-}
+</body>
+</html>
