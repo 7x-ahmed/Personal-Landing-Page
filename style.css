@@ -10,14 +10,23 @@
 
 body {
     background-color: #222831;
+    overflow-x: hidden; /* يمنع ظهور شريط التمرير الأفقي تماماً في الهواتف */
 }
 
+/* --- الهيدر (Header) --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 2rem auto;
     max-width: 1200px;
+    padding: 0 2rem;
+}
+
+#logoo {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
 }
 
 .navigation ul {
@@ -39,12 +48,15 @@ hr {
     opacity: 10%;
 }
 
+/* --- قسم الواجهة (Hero) --- */
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 5rem auto;
     max-width: 1200px;
+    padding: 0 2rem;
+    position: relative;
 }
 
 .arrow {
@@ -57,6 +69,7 @@ hr {
     flex-direction: column;
     gap: 0.5rem;
     transform: translateX(3.4rem);
+    z-index: 2;
 }
 
 .name {
@@ -73,6 +86,7 @@ hr {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .hireMe {
@@ -98,11 +112,12 @@ hr {
 }
 
 .heroImg {
-    display: flex;
-    gap: 0.5rem;
+    max-width: 45%;
+    height: auto;
     transform: translateX(4rem);
 }
 
+/* --- قسم نبذة عني (About Me) --- */
 .aboutMe {
     display: flex;
     justify-content: space-between;
@@ -110,11 +125,18 @@ hr {
     margin: 10rem auto;
     max-width: 1200px;
     gap: 10rem;
+    padding: 0 2rem;
+}
+
+.aboutMeImg {
+    max-width: 40%;
+    height: auto;
 }
 
 .textContainer {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .textTitle {
@@ -135,11 +157,15 @@ hr {
 .aboutMePar {
     text-align: justify;
     color: rgba(238, 238, 238, 0.75);
+    line-height: 1.6;
 }
 
+/* --- قسم الأعمال (Works) --- */
 .works {
     background-image: url("assets/svg/background.svg");
-    padding: 10rem 10rem;
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 2rem;
     margin: 5rem 0rem;
 }
 
@@ -158,15 +184,16 @@ hr {
     justify-content: flex-start;
     gap: 5px;
     font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 .works ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 2rem;
     list-style-type: none;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 }
 
@@ -174,30 +201,38 @@ hr {
     border-radius: 16px;
     background-color: rgba(57, 62, 70, 0.5);
     backdrop-filter: blur(4px);
-    padding: 1rem 4rem;
+    padding: 2rem;
     overflow: hidden;
     transition: background-color 0.3s;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
 }
 
 .works li img {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     height: 200px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .works li:hover img {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
+/* --- قسم التواصل (Contact) --- */
 .contactContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     gap: 2rem;
-    margin: 2rem auto;
+    margin: 5rem auto;
     max-width: 1200px;
+    padding: 0 2rem;
 }
 
 .contactTitle {
@@ -209,16 +244,20 @@ hr {
     font-size: 2rem;
 }
 
+/* تم حل مشكلة الأبعاد الثابتة القديمة هنا وتغييرها لـ Flexbox مرن */
 .contact {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 10rem;
+    gap: 4rem; 
+    width: 100%;
 }
 
 .contact h3, .contact a {
     color: #eeeeee;
     text-decoration: none;
+    word-break: break-all; /* يحمي الشاشة من التمدد بسبب الإيميل */
 }
 
 .emailAndPhone {
@@ -228,6 +267,7 @@ hr {
     gap: 10px;
 }
 
+/* --- السوشيال ميديا --- */
 .socialMedia {
     display: flex;
     align-items: center;
@@ -256,28 +296,91 @@ hr {
     height: 35px;
 }
 
-/* تنسيق الـ Footer الجديد */
+/* --- تذييل الصفحة (Footer) --- */
 .mainFooter {
     text-align: center;
     padding: 2.5rem 0;
     margin-top: 4rem;
-    border-top: 1px solid rgba(238, 238, 238, 0.05); /* خط علوي خفيف جداً للفصل */
-    background-color: #1a1f26; /* أغمق بقليل من لون الـ body ليعطي عمقاً ببروز جميل */
+    border-top: 1px solid rgba(238, 238, 238, 0.05);
+    background-color: #1a1f26;
 }
 
 .mainFooter p {
     color: rgba(238, 238, 238, 0.6);
     font-size: 1rem;
     letter-spacing: 1px;
-    text-transform: capitalize; /* يجعل الحروف الأولى كبيرة بشكل احترافي */
 }
-
 
 .mainFooter .footerName {
-    color: #00adb5; /* لون اسمك المميز المستوحى من الهوية البصرية للموقع */
+    color: #00adb5;
     font-weight: bold;
 }
-#logoo{
-    width: 100px;
-    height: 100px;
+
+
+/* ==========================================================================
+   قواعد التجاوب الذكية (Media Queries) للهواتف والشاشات الصغيرة
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .aboutMe {
+        gap: 3rem;
+    }
+    .name { font-size: 2.5rem; }
+    .title { font-size: 3.2rem; }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .hero {
+        flex-direction: column-reverse; /* الصورة تصبح بالأعلى ثم النص في الهواتف */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .heroAhmed {
+        transform: translateX(0); /* إلغاء الإزاحات لتوسيط النص تماماً */
+        align-items: center;
+    }
+
+    .heroImg {
+        max-width: 70%;
+        transform: translateX(0);
+    }
+
+    .arrow {
+        display: none; /* إخفاء السهم الجانبي بالهاتف */
+    }
+
+    .aboutMe {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        margin: 5rem auto;
+    }
+
+    .aboutMeImg {
+        max-width: 60%;
+    }
+
+    .textTitle {
+        justify-content: center;
+    }
+
+    .contact {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation ul {
+        gap: 1rem;
+    }
+    .name { font-size: 2rem; }
+    .title { font-size: 2.5rem; }
+    .works { padding: 4rem 1rem; }
 }
