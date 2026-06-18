@@ -1,45 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700&display=swap');
 
-* {
+/* =====================
+   RESET & BASE
+   ===================== */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
-    font-family: "poppins", serif;
 }
 
 body {
     background-color: #222831;
-    overflow-x: hidden; /* يمنع بشكل قاطع أي تمرير أفقي على الهواتف */
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    width: 100%;
 }
 
-/* --- الهيدر (Header) --- */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =====================
+   HEADER
+   ===================== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2rem auto;
     max-width: 1200px;
-    padding: 0 2rem;
-    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 4rem;
 }
 
 #logoo {
-    width: 80px;
-    height: auto;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
 }
 
 .navigation ul {
     display: flex;
-    list-style-type: none;  
+    list-style: none;
     gap: 2rem;
 }
 
 .navigation a {
-    text-decoration: none;
     color: #eeeeee;
-    transition: color 0.3s ease;
+    font-size: 1rem;
+    transition: color 0.3s;
 }
 
 .navigation a:hover {
@@ -47,245 +65,273 @@ header {
 }
 
 hr {
-    opacity: 10%;
-    max-width: 1200px;
-    margin: 0 auto;
+    border: none;
+    border-top: 1px solid rgba(238, 238, 238, 0.1);
 }
 
-/* --- قسم الواجهة (Hero) --- */
+/* =====================
+   HERO
+   ===================== */
 .hero {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 5rem auto;
+    justify-content: space-between;
     max-width: 1200px;
-    padding: 0 2rem;
-    width: 100%;
-    gap: 2rem; /* بديل مرن للإزاحات العشوائية */
+    margin: 0 auto;
+    padding: 4rem 4rem;
+    gap: 3rem;
 }
 
-/* تم ضبط السهم ليكون مرناً ومميزاً بدون تخريب الأبعاد */
 .arrow {
-    position: absolute;
-    left: 0;
-    top: -2rem;
-    z-index: 1;
-    opacity: 0.5;
+    display: none;
 }
 
 .heroAhmed {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    z-index: 2;
+    gap: 0.4rem;
     flex: 1;
+    min-width: 0;
 }
 
 .name {
-    font-size: clamp(2rem, 4vw, 3rem); /* حجم خط ديناميكي يتكيف تلقائياً مع حجم الشاشة */
+    font-size: 3rem;
     color: #eeeeee;
+    line-height: 1.1;
 }
 
 .title {
-    font-size: clamp(2.5rem, 6vw, 4rem); /* حجم خط ديناميكي يتكيف تلقائياً */
+    font-size: 4rem;
     color: #00adb5;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .heroBtns {
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
 }
 
-.hireMe, .cv {
-    background-color: #00adb5;
-    color: #eeeeee;
-    border-radius: 24px;
-    text-decoration: none;
-    padding: 0.6rem 1.8rem;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+.hireMe {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #00adb5;
+    color: #eeeeee;
+    border-radius: 24px;
+    padding: 0.6rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: opacity 0.3s;
+}
+
+.hireMe:hover {
+    opacity: 0.85;
 }
 
 .cv {
-    background-color: rgba(57, 62, 70, 0.75);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    background-color: rgba(57, 62, 70, 0.75);
+    color: #eeeeee;
+    border-radius: 24px;
+    padding: 0.6rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
     backdrop-filter: blur(4px);
+    transition: opacity 0.3s;
 }
 
-.hireMe:hover, .cv:hover {
-    transform: translateY(-3px);
+.cv:hover {
+    opacity: 0.85;
+}
+
+.cv img {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
 }
 
 .heroImg {
-    max-width: 45%;
+    width: 42%;
+    max-width: 420px;
     height: auto;
-    flex: 1;
-    object-fit: contain;
+    flex-shrink: 0;
 }
 
-/* --- قسم نبذة عني (About Me) --- */
+/* =====================
+   ABOUT ME
+   ===================== */
 .aboutMe {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 10rem auto;
+    justify-content: space-between;
     max-width: 1200px;
-    gap: 4rem; /* تم تقليل الفجوة الكبيرة الثابتة لتجنب تدمير التصميم */
-    padding: 0 2rem;
-    width: 100%;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+    gap: 4rem;
 }
 
 .aboutMeImg {
-    max-width: 40%;
+    width: 38%;
+    max-width: 380px;
     height: auto;
-    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .textContainer {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     flex: 1;
+    min-width: 0;
 }
 
 .textTitle {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.textTitle img {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
 }
 
 .aboutName {
+    font-size: 2.5rem;
     color: #eeeeee;
+    line-height: 1.1;
 }
 
 .aboutTitle {
+    font-size: 2.5rem;
     color: #00adb5;
+    line-height: 1.1;
 }
 
 .aboutMePar {
-    text-align: justify;
     color: rgba(238, 238, 238, 0.75);
-    line-height: 1.7;
-    font-size: 1.05rem;
+    line-height: 1.8;
+    font-size: 1rem;
 }
 
-/* --- قسم الأعمال (Works) --- */
+/* =====================
+   WORKS
+   ===================== */
 .works {
     background-image: url("assets/svg/background.svg");
     background-size: cover;
     background-position: center;
-    padding: 6rem 2rem;
-    margin: 5rem 0rem;
-    width: 100%;
+    padding: 5rem 4rem;
+    margin: 2rem 0;
 }
 
 .worksContainer {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    gap: 3rem;
     max-width: 1200px;
-    width: 100%;
+    margin: 0 auto;
 }
 
 .projectTitle {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 2rem;
-    margin-bottom: 3rem;
+    flex-wrap: wrap;
 }
 
 .works ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    list-style-type: none;
-    align-items: center;
-    justify-content: center; /* يضمن توسيط الكروت في منتصف الشاشة دائماً */
-    width: 100%;
+    gap: 20px;
+    list-style: none;
+    justify-content: center;
 }
 
 .works li {
     border-radius: 16px;
     background-color: rgba(57, 62, 70, 0.5);
     backdrop-filter: blur(4px);
-    padding: 2.5rem 1.5rem;
+    padding: 1.5rem;
     overflow: hidden;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    flex: 1;
-    min-width: 280px; /* تتقلص وتتمدد بمرونة وتنزل لسطر جديد تلقائياً */
-    max-width: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.works li a {
+    display: block;
 }
 
 .works li img {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
+    width: 200px;
+    height: 200px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
-.works li:hover {
-    background-color: rgba(57, 62, 70, 0.8);
-}
-
 .works li:hover img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
-/* --- قسم التواصل (Contact) --- */
+/* =====================
+   CONTACT
+   ===================== */
 .contactContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
-    margin: 6rem auto;
+    gap: 2.5rem;
     max-width: 1200px;
-    padding: 0 2rem;
-    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 4rem;
 }
 
 .contactTitle {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    font-size: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .contact {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
-    width: 100%;
-}
-
-.contact h3, .contact a {
-    color: #eeeeee;
-    text-decoration: none;
-    font-size: 1.05rem;
+    gap: 4rem;
+    flex-wrap: wrap;
 }
 
 .emailAndPhone {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
+    gap: 10px;
 }
 
-/* --- السوشيال ميديا --- */
+.emailAndPhone img {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.emailAndPhone a {
+    color: #eeeeee;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: color 0.3s;
+    word-break: break-all;
+}
+
+.emailAndPhone a:hover {
+    color: #00adb5;
+}
+
 .socialMedia {
     display: flex;
     align-items: center;
@@ -301,7 +347,7 @@ hr {
     background-color: rgba(57, 62, 70, 0.5);
     backdrop-filter: blur(6px);
     padding: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .socialMedia a:hover {
@@ -314,136 +360,231 @@ hr {
     height: 30px;
 }
 
-/* --- تذييل الصفحة (Footer) --- */
+/* =====================
+   FOOTER
+   ===================== */
 .mainFooter {
     text-align: center;
     padding: 2rem 1rem;
-    margin-top: 6rem;
-    border-top: 1px solid rgba(238, 238, 238, 0.05);
+    margin-top: 3rem;
+    border-top: 1px solid rgba(238, 238, 238, 0.07);
     background-color: #1a1f26;
-    width: 100%;
 }
 
 .mainFooter p {
-    color: rgba(238, 238, 238, 0.6);
+    color: rgba(238, 238, 238, 0.55);
     font-size: 0.95rem;
     letter-spacing: 1px;
 }
 
 .mainFooter .footerName {
     color: #00adb5;
-    font-weight: bold;
+    font-weight: 700;
 }
 
-
-/* ==========================================================================
-   الـ Media Queries المطورة والشاملة لجميع أنواع الشاشات والأجهزة
-   ========================================================================== */
-
-/* 1. أجهزة اللاب توب والشاشات المتوسطة (أقل من 992 بكسل) */
-@media (max-width: 992px) {
-    .aboutMe {
-        gap: 3rem;
-        margin: 6rem auto;
-    }
-    .hero {
-        margin: 3rem auto;
-    }
-}
-
-/* 2. الأجهزة اللوحية (Tablets) والهواتف الكبيرة (أقل من 768 بكسل) */
-@media (max-width: 768px) {
+/* =====================
+   TABLET — max 900px
+   ===================== */
+@media (max-width: 900px) {
     header {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
+        padding: 1.2rem 2.5rem;
     }
 
     .hero {
-        flex-direction: column-reverse; /* الصورة تصعد للأعلى والنص تحتها لراحة العين بالهاتف */
+        flex-direction: column;
         text-align: center;
-        gap: 2.5rem;
-        margin: 2rem auto;
+        padding: 3rem 2.5rem;
+        gap: 2rem;
     }
 
     .heroAhmed {
         align-items: center;
+        order: 1;
     }
 
     .heroImg {
-        max-width: 65%;
+        order: 2;
+        width: 55%;
+        max-width: 320px;
     }
 
-    .arrow {
-        display: none; /* إخفاء السهم تماماً في الشاشات العمودية لمنع كسر الأبعاد */
+    .heroBtns {
+        justify-content: center;
     }
 
     .aboutMe {
         flex-direction: column;
         text-align: center;
+        padding: 3rem 2.5rem;
         gap: 2.5rem;
-        margin: 5rem auto;
     }
 
     .aboutMeImg {
-        max-width: 55%;
+        width: 50%;
+        max-width: 300px;
     }
 
-    .textTitle {
-        justify-content: center;
+    .textContainer {
+        align-items: center;
     }
 
     .aboutMePar {
-        text-align: center; /* مظهر أريح للقراءة على الهواتف */
+        text-align: center;
+    }
+
+    .works {
+        padding: 4rem 2.5rem;
+    }
+
+    .contactContainer {
+        padding: 3rem 2.5rem;
+    }
+
+    .contact {
+        gap: 2.5rem;
+    }
+}
+
+/* =====================
+   MOBILE — max 600px
+   ===================== */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    #logoo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .navigation ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation a {
+        font-size: 0.88rem;
+    }
+
+    .hero {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .name {
+        font-size: 2.2rem;
+    }
+
+    .title {
+        font-size: 2.8rem;
+    }
+
+    .heroImg {
+        width: 72%;
+        max-width: 260px;
+    }
+
+    .heroBtns {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .aboutMe {
+        padding: 2.5rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .aboutMeImg {
+        width: 72%;
+    }
+
+    .aboutName,
+    .aboutTitle {
+        font-size: 2rem;
+    }
+
+    .aboutMePar {
+        font-size: 0.95rem;
+    }
+
+    .works {
+        padding: 3rem 1.2rem;
+        margin: 1rem 0;
+    }
+
+    .works li {
+        padding: 1.2rem;
+    }
+
+    .works li img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .contactContainer {
+        padding: 2.5rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .contactTitle .aboutName,
+    .contactTitle .aboutTitle {
+        font-size: 2rem;
     }
 
     .contact {
         flex-direction: column;
-        gap: 2rem;
-    }
-}
-
-/* 3. الهواتف الذكية المتوسطة والصغيرة (أقل من 480 بكسل) */
-@media (max-width: 480px) {
-    header {
-        padding: 0 1rem;
-    }
-
-    .navigation ul {
-        gap: 1.2rem; /* تقريب مسافات أزرار التنقل */
-    }
-
-    .navigation a {
-        font-size: 0.9rem;
-    }
-
-    .hero {
-        padding: 0 1rem;
-    }
-
-    .heroImg {
-        max-width: 80%;
-    }
-
-    .heroBtns {
-        justify-content: center;
+        gap: 1.2rem;
+        align-items: flex-start;
         width: 100%;
     }
 
-    .hireMe, .cv {
-        width: 100%; /* الأزرار تأخذ العرض الكامل لتسهيل النقر بالإصبع */
-        max-width: 260px;
+    .emailAndPhone a {
+        font-size: 0.88rem;
     }
 
-    .aboutMeImg {
-        max-width: 75%;
+    .socialMedia {
+        gap: 1.5rem;
     }
 
-    .works {
-        padding: 4rem 1rem;
-    }
-
-    .works li {
+    .mainFooter {
         padding: 1.5rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .mainFooter p {
+        font-size: 0.85rem;
+    }
+}
+
+/* =====================
+   SMALL MOBILE — max 400px
+   ===================== */
+@media (max-width: 400px) {
+    .name {
+        font-size: 1.8rem;
+    }
+
+    .title {
+        font-size: 2.3rem;
+    }
+
+    .heroImg {
+        width: 82%;
+    }
+
+    .aboutName,
+    .aboutTitle {
+        font-size: 1.7rem;
+    }
+
+    .works li img {
+        width: 110px;
+        height: 110px;
     }
 }
